@@ -2,21 +2,21 @@
 // We have them here to illustrate the implicit import of the related code.
 // Please leave these lines commented out.
 // import FishTableRow from './FishTableRow.js';
-class FishTable extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
+// class FishTable extends React.Component {
+//   constructor(props) {
+//     super(props)
+//   }
+//   render() {
 
-  }
-}
+//   }
+// }
 
-var FishTable = () => (
+var FishTable = (props) => (
   <table>
     <tbody>
-      <FishTableRow />
-      <FishTableRow />
-      <FishTableRow />
+      {props.fishes.map( (item) =>
+        <FishTableRow fish={item}/>
+      )}
     </tbody>
   </table>
 );
